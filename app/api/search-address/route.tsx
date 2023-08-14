@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 
 const BASE_URL = 'https://api.mapbox.com/search/searchbox/v1/suggest'
-const LIMITS = 6
+const LIMITS = 8
+const COUNTRY = ' ' ?? '&country=US'
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const searchText = searchParams.get('q') ?? ''
@@ -12,7 +13,7 @@ export async function GET(request: Request) {
   )
 
   const res = await fetch(
-    `${BASE_URL}?q=${searchText}?language=en&limit=${LIMITS}&session_token=00d509d2-42f1-4b91-889f-2f36b0204d0d&country=CO&access_token=${
+    `${BASE_URL}?q=${searchText}?language=en&limit=${LIMITS}&session_token=00d509d2-42f1-4b91-889f-2f36b0204d0d${COUNTRY}&access_token=${
       process.env.MAPBOX_ACCESS_TOKEN ?? ''
     }`,
     {
