@@ -1,11 +1,14 @@
 'use client'
 import { IndexContext } from '@/app/context/IndexContext'
+import { useUser } from '@clerk/nextjs'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { useContext } from 'react'
 import { Map, Marker } from 'react-map-gl'
 
 function MapBox() {
   const { userLocation } = useContext(IndexContext)
+  const user = useUser()
+  console.log("🚀 ~ file: MapBox.tsx:11 ~ MapBox ~ user:", user)
   
   return (
     <div className="grid gap-3 py-5 pr-3">
@@ -27,7 +30,7 @@ function MapBox() {
             longitude={userLocation.lng || -77.27349377964507}
             latitude={userLocation.lat || 1.2017360010698115}
             anchor='bottom'>
-              <img src='/vercel.svg' className='h-5' />
+              <img src={user.user?.imageUrl} className='h-10 rounded-full' />
         </Marker >
         </Map>
       </div>
