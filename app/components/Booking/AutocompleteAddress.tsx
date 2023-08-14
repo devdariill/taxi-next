@@ -15,6 +15,7 @@ function AutocompleteAddress() {
     setAddressList(result)
   }
   useEffect(() => {
+    if (source.length < 3) return
     const delayDebounceFn = setTimeout(() => {
       void getAddressList()
     }, 1000)
