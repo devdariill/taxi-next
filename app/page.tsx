@@ -1,12 +1,27 @@
-// app/page.tsx
-
+'use client'
+import { useEffect, useState } from 'react'
 import Booking from './components/Booking/Booking'
 import MapBox from './components/Map/MapBox'
 import { IndexContext } from './context/IndexContext'
-import UseLocation from './hooks/UseLocation'
 
 export default function Home() {
-  const { userLocation } = UseLocation()
+  const [userLocation, setUserLocation] = useState<{lat: number; lng: number}>({lat: 0, lng: 0})
+
+  const getUseLocation = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position)
+      setUserLocation({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      })
+    })
+  }
+  useEffect(() => {
+    getUseLocation()
+  }, [])
+
+  if (!userLocation) return <div>Loading...</div>
+
   return (
     <main>
       <IndexContext.Provider value={{ userLocation }}>
