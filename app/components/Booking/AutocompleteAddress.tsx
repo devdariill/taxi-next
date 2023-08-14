@@ -41,6 +41,12 @@ function AutocompleteAddress() {
         <label>Noticias</label>
         <input type="text" className="w-full rounded-md border bg-white/90 outline-none" />
       </div>
+      <a
+        href="mailto: devdariill@gmail.com?subject=Generar un mapa para mi empresa con la version gratuita&body=Hola "
+        className="mt-5 flex items-center justify-center rounded bg-white pb-1 text-center font-bold text-black"
+      >
+        ✉️ Contact
+      </a>
     </div>
   )
 }
