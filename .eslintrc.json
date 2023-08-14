@@ -26,7 +26,7 @@
       "warn",
       {
         "printWidth": 100,
-        "trailingComma": "all",
+        "trailingComma": false,
         "tabWidth": 2,
         "semi": false,
         "singleQuote": true,
