@@ -7,8 +7,8 @@ function AutocompleteAddress() {
   const getAddressList = async () => {
     const res = await fetch(`/api/search-address?q=${source}`, {
       headers: {
-        'Content-Type': 'application/json',
-      },
+        'Content-Type': 'application/json'
+      }
     })
     const result = await res.json()
     console.log('🚀 ~ file: AutocompleteAddress.tsx:13 ~ getAddressList ~ result:', result)
