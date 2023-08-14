@@ -1,5 +1,24 @@
 'use client'
-import { createContext } from 'react';
+import { createContext } from 'react'
 // imp
 
-export const IndexContext = createContext<{ userLocation: { lat: number; lng: number } }>(null as any)
+interface IndexContextProps {
+  userLocation: {
+    lat: number
+    lng: number
+  }
+  newLocation: {
+    bool: boolean
+    lat: number
+    lng: number
+  }
+  setNewLocation: React.Dispatch<
+    React.SetStateAction<{
+      bool: boolean
+      lat: number
+      lng: number
+    }>
+  >
+}
+
+export const IndexContext = createContext<IndexContextProps>(null as any)
