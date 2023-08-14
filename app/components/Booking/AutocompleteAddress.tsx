@@ -24,7 +24,7 @@ function AutocompleteAddress() {
   return (
     <div>
       <div>
-        <label>Where From</label>
+        <label>Resturantes cercanos</label>
         <input
           type="text"
           className="w-full rounded-md border bg-white/90 px-2 text-black outline-none"
@@ -38,7 +38,7 @@ function AutocompleteAddress() {
             ))}
           </div>
         ) : null}
-        <label>Where To</label>
+        <label>Noticias</label>
         <input type="text" className="w-full rounded-md border bg-white/90 outline-none" />
       </div>
     </div>

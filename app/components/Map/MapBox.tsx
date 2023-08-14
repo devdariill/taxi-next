@@ -10,6 +10,7 @@ function MapBox() {
   const { userLocation, newLocation } = useContext(IndexContext)
 
   const user = useUser()
+  console.log('🚀 ~ file: MapBox.tsx:13 ~ MapBox ~ user:', user)
 
   const mapRef = useRef<any>()
 
