@@ -5,10 +5,14 @@
       "es2021": true,
       "node": true
   },
+  "plugins": [
+    "react","prettier"
+  ],
   "extends": [
       "./node_modules/ts-standard/eslintrc.json",
       "plugin:react/recommended",
-      "next/core-web-vitals"
+      "next/core-web-vitals",
+      "plugin:prettier/recommended"
   ],
   "overrides": [
   ],
@@ -17,10 +21,21 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
-  "rules": {
+  "rules": {    
+    "prettier/prettier": [
+      "warn",
+      {
+        "printWidth": 100,
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "semi": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "arrowParens": "always",
+        "endOfLine": "auto",
+        "plugins": ["prettier-plugin-tailwindcss"]
+      }
+    ],
     "@typescript-eslint/explicit-function-return-type": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
